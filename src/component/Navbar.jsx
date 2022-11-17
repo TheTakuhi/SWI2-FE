@@ -9,6 +9,7 @@ import ls from "../util/localStorage";
 import { useState } from "react";
 
 const CustomNavbar = () => {
+
     const { data: user, error } = useUserDetailQuery();
     const { push } = useHistory();
     const [search, setSearch] = useState("");

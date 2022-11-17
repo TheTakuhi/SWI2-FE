@@ -3,13 +3,13 @@ import { Container, Row, Col, Spinner, Button, Alert } from 'react-bootstrap';
 import {
     getAllChatroomsQueryKey,
     useAllChatroomIdsQuery
-} from "../hooks/chatroom/queries/useAllChatroomIdsQuery";
-import Logout from "./Logout";
+} from "../../hooks/chatroom/queries/useAllChatroomIdsQuery";
+import Logout from "../Logout";
 import { useParams } from "react-router";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import { useQueryClient } from "react-query";
-import { getChatroomMessagesQueryKey } from "../hooks/chatroom/queries/useChatroomMessagesQuery";
-import UserShortcutBanner from "./UserShortcutBanner";
+import { getChatroomMessagesQueryKey } from "../../hooks/chatroom/queries/useChatroomMessagesQuery";
+import UserShortcutBanner from "../UserShortcutBanner";
 
 const ChatroomList = ({ userId }) => {
 

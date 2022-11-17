@@ -2,7 +2,7 @@ import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 
 import { useUserDetailQuery } from "../hooks/user/queries/useUserDetailQuery";
 import Logout from "../component/Logout";
-import UsersList from "../component/UserList";
+import UsersList from "../component/UsersList";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 
 const UserPage = () => {

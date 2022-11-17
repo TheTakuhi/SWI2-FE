@@ -25,15 +25,13 @@ const UserShortcutBanner = ({ username, bg, fontSize, animation, tooltip }) => {
             onMouseLeave={handleOnMouseLeave}
         >
             {badge}
-            {hovered
-            //     && <TypeAnimation
-            //     cursor={true}
-            //     repeat={1}
-            //     sequence={[username, 3000, username]}
-            //     wrapper="span"
-            //     className="h6"
-            // />
-            }
+            {hovered && <TypeAnimation
+                cursor={true}
+                repeat={1}
+                sequence={[username, 3000, username]}
+                wrapper="span"
+                className="h6"
+            />}
         </span>
     );
 
@@ -46,6 +44,7 @@ const UserShortcutBanner = ({ username, bg, fontSize, animation, tooltip }) => {
             {badge}
         </OverlayTrigger>
     )
+
 
     const renderBadge = () => (
         <Badge

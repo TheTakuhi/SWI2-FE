@@ -1,7 +1,7 @@
 import { Container, Row } from 'react-bootstrap';
 
 import { useParams } from "react-router";
-import ChatroomWindow from "../component/ChatroomWindow/ChatroomWindow";
+import ChatroomWindow from "./ChatroomWindow/ChatroomWindow";
 
 const ChatroomContainer = ({ userId }) => {
 

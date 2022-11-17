@@ -1,7 +1,7 @@
 import { Badge, Col, Row } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
 import TypeAnimation from 'react-type-animation';
-import UserShortcutBanner from "../UserShortcutBanner";
+import UserShortcutBanner from "../../../UserShortcutBanner";
 
 const ChatroomMessages = ({ messages, justWriting }) => {
 
@@ -70,12 +70,12 @@ const ChatroomMessages = ({ messages, justWriting }) => {
                             key={author.authorId}
                             className="badge rounded-pill bg-secondary mr-2"
                         >{author.authorUsername} is writing
-                        {/*<TypeAnimation*/}
-                        {/*    cursor={false}*/}
-                        {/*    repeat={Infinity}*/}
-                        {/*    sequence={['...', 3000, '']}*/}
-                        {/*    wrapper="span"*/}
-                        {/*/>*/}
+                        <TypeAnimation
+                            cursor={false}
+                            repeat={Infinity}
+                            sequence={['...', 3000, '']}
+                            wrapper="span"
+                        />
                     </span>
                     ))}
                 </Col>

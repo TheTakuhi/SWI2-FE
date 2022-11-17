@@ -3,17 +3,18 @@ import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 import SockJsClient from "react-stomp";
 import dayjs from "dayjs";
 
-import { getByKey } from "../../util/localStorage";
-import { useChatroomMessagesQuery } from "../../hooks/chatroom/queries/useChatroomMessagesQuery";
+import { getByKey } from "../../../../util/localStorage";
+import { useChatroomMessagesQuery } from "../../../../hooks/chatroom/queries/useChatroomMessagesQuery";
 import { useParams } from "react-router";
 import ChatroomMessages from "./ChatroomMessages";
-import Logout from "../Logout";
+import Logout from "../../../Logout";
 import ChatroomWindowForm from "./ChatroomWindowForm";
 
 const createEndpoint = (chatroomId, userId) =>
     (chatroomId && userId) ? `/topic/user_${userId}/chatroom_${chatroomId}` : undefined;
 
 const ChatroomWindow = ({ userId }) => {
+
     const { chatroomId } = useParams();
     const [messages, setMessages] = useState([]);
     const [wsEndpoint, setWsEndpoint] = useState(() => createEndpoint(chatroomId, userId));

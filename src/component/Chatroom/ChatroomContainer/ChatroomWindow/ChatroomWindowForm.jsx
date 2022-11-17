@@ -1,6 +1,6 @@
 import {Button, Col, Form, Row} from "react-bootstrap";
 import {useEffect, useState} from "react";
-import useCreateMessageCommand from "./../../hooks/message/mutations/useCreateMessageCommand";
+import useCreateMessageCommand from "../../../../hooks/message/mutations/useCreateMessageCommand";
 import InputEmoji from "react-input-emoji";
 
 const ChatroomWindowForm = ({onSubmit, chatroomId, onWriting, cancelWriting}) => {

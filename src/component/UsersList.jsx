@@ -8,6 +8,7 @@ import useCreateChatroomCommand from "../hooks/chatroom/mutations/useCreateChatr
 const getFromQS = (name, location) => new URLSearchParams(location.search).get(name);
 
 const UsersList = ({ userId }) => {
+
     const location = useLocation();
     const term = getFromQS("term", location);
     const { data: users, isLoading, error } = useSearchUsersQuery(term);

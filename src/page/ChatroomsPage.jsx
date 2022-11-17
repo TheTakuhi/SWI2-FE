@@ -1,7 +1,7 @@
 import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 
-import ChatroomList from '../component/ChatroomList';
-import ChatroomContainer from '../container/ChatroomContainer';
+import ChatroomList from '../component/Chatroom/ChatroomList';
+import ChatroomContainer from '../component/Chatroom/ChatroomContainer/ChatroomContainer';
 import { Route, useRouteMatch } from "react-router-dom";
 import { useUserDetailQuery } from "../hooks/user/queries/useUserDetailQuery";
 import Logout from "../component/Logout";
@@ -15,6 +15,7 @@ const ChatroomsPage = () => {
     if (isLoading) return <Spinner animation="border" />
     if (Boolean(error)) {
         console.log(error);
+
         if (error.response?.status === 403) {
             return <Logout expiredToken={true} />
         } else

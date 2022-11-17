@@ -2,6 +2,7 @@ import { Redirect, Route } from "react-router-dom";
 import ls from "../util/localStorage";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
+
     const token = ls.getByKey("token");
 
     return (
