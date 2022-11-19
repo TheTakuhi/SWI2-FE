@@ -12,8 +12,8 @@ const ChatroomContainer = ({ userId }) => {
 
     return (<>
         <Container fluid className="m-0 p-0">
-            <Row className="mx-0 p-0">
-                <h3>Chatroom with </h3>
+            <Row className="mx-0 p-0" style={{textAlign: "center"}}>
+                <h3>Selected chat</h3>
             </Row>
             <ChatroomWindow userId={userId} />
         </Container>

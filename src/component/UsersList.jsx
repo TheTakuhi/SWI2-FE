@@ -8,7 +8,6 @@ import useCreateChatroomCommand from "../hooks/chatroom/mutations/useCreateChatr
 const getFromQS = (name, location) => new URLSearchParams(location.search).get(name);
 
 const UsersList = ({ userId }) => {
-
     const location = useLocation();
     const term = getFromQS("term", location);
     const { data: users, isLoading, error } = useSearchUsersQuery(term);
@@ -27,11 +26,10 @@ const UsersList = ({ userId }) => {
             },
             onError: (data) => console.log({ data }),
         });
-
     }
 
     const renderUsers = (values) => {
-        if (!values || !values.length) return "No users found";
+        if (!values || !values.length) return <div style={{paddingLeft: "1vw"}}>"No users found"</div>;
 
         return values
             .filter(u => Number(u.id) !== Number(userId))
@@ -60,8 +58,8 @@ const UsersList = ({ userId }) => {
     }
 
     return (
-        <Container fluid className="m-0 p-0">
-            <Row className="mx-0 p-0">
+        <Container>
+            <Row>
                 <h3>Searched users by: <b>{term}</b></h3>
             </Row>
             {renderUsers(users)}

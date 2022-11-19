@@ -34,7 +34,6 @@ const ChatroomWindowForm = ({onSubmit, chatroomId, onWriting, cancelWriting}) =>
 
     useEffect(() => {
         handleWriting(message);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [message])
 
     if (error) {
@@ -47,7 +46,6 @@ const ChatroomWindowForm = ({onSubmit, chatroomId, onWriting, cancelWriting}) =>
                 <Col xs={10} className="align-items-center">
                     <InputEmoji
                         value={message}
-                        // onChange={e => setMessage(e.target.value)}
                         onEnter={() => handleSubmit()}
                         onChange={msg => setMessage(msg)}
                     />

@@ -24,7 +24,7 @@ const ChatroomList = ({ userId }) => {
     const chatroomIdEquals = (id) => Number(id) === Number(chatroomId);
 
     const renderParticipants = (users) => {
-        if (!users || !users.length) return "None users attached";
+        if (!users || !users.length) return "Chat room has no users";
 
         if (users.length === 2) {
             const attachedUser = users.filter(u => !userIdEquals(u.id))[0];
@@ -48,15 +48,15 @@ const ChatroomList = ({ userId }) => {
 
     const renderChatRooms = () => {
         if (!data || !data.length)
-            return <Row><h3>No Chatroom found</h3></Row>
+            return <Row><h3>No chat rooms found</h3></Row>
 
         return data.map(chatroom => <Row className="m-0 p-0" key={chatroom.id}>
             <Col xs={12}>
-                <div className="d-grid gap-2">
+                <div className="d-grid gap-2" style={{backgroundColor: "#90e0ef"}}>
                     <Button
                         variant={`${chatroomIdEquals(chatroom.id) ? 'warning' : 'secondary'}`}
                         className="m-1 position-relative"
-                        style={{ textAlign: 'left' }}
+                        style={{ textAlign: 'center', backgroundColor: "#0077b6" }}
                         onClick={() => {
                             queryClient.removeQueries(getAllChatroomsQueryKey());
                             queryClient.removeQueries(getChatroomMessagesQueryKey(chatroom.id));
@@ -95,7 +95,7 @@ const ChatroomList = ({ userId }) => {
     return (
         <Container fluid className="m-0 p-0">
             <Row className="mx-0 p-0">
-                <h3>Chatrooms:</h3>
+                <h3>Your chat rooms:</h3>
             </Row>
             {renderChatRooms()}
         </Container>
